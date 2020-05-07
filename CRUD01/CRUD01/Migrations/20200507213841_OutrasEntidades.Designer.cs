@@ -3,14 +3,16 @@ using System;
 using CRUD01.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CRUD01.Migrations
 {
     [DbContext(typeof(CRUD01Context))]
-    partial class CRUD01ContextModelSnapshot : ModelSnapshot
+    [Migration("20200507213841_OutrasEntidades")]
+    partial class OutrasEntidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,9 +60,9 @@ namespace CRUD01.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<DateTime>("Nascimento");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Nome");
+                    b.Property<DateTime>("Nascimento");
 
                     b.Property<double>("SalarioBase");
 

@@ -14,6 +14,8 @@ namespace CRUD01.Data
         {
         }
 
-        public DbSet<CRUD01.Models.Departamento> Departamento { get; set; }
+        public DbSet<Departamento> Departamento { get; set; }
+        public DbSet<Vendedor> Vendedor { get; set; }
+        public DbSet<RegistroVenda> RegistroVenda { get; set; }
     }
 }
