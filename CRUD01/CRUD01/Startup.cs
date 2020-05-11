@@ -11,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using CRUD01.Data;
-using CRUD01.Services;
 
 namespace CRUD01
 {
@@ -40,8 +39,6 @@ namespace CRUD01
             services.AddDbContext<CRUD01Context>(options =>
                     options.UseMySql(Configuration.GetConnectionString("CRUD01Context"), builder => 
                     builder.MigrationsAssembly("CRUD01")));
-
-            services.AddScoped<ServicoVendedor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
