@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CRUD01.Models
 {
@@ -13,7 +12,9 @@ namespace CRUD01.Models
         public DateTime Nascimento { get; set; }
         public double SalarioBase { get; set; }
         public Departamento Departamento{ get; set; }
+        public int DepartamentoId { get; set; }
         public ICollection<RegistroVenda> Vendas { get; set; } = new List<RegistroVenda>();
+
 
         public Vendedor()
         {
@@ -26,7 +27,6 @@ namespace CRUD01.Models
             Email = email;
             Nascimento = nascimento;
             SalarioBase = salarioBase;
-            Departamento = departamento;
         }
 
         public void AdicionarVendas(RegistroVenda registro)
