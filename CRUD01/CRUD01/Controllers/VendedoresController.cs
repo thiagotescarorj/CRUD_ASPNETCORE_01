@@ -37,9 +37,8 @@ namespace CRUD01.Controllers
             {
                 return NotFound();
             }
-
-            var vendedor = await _context.Vendedor
-                .FirstOrDefaultAsync(m => m.Id == id);
+            //Include() faz o inner join no caso com a tabela departamento
+            var vendedor = await _context.Vendedor.Include(obj => obj.Departamento).FirstOrDefaultAsync(m => m.Id == id);
             if (vendedor == null)
             {
                 return NotFound();
